@@ -399,6 +399,34 @@
     footer{ background:#1a212b; }
 
     @media(max-width:600px){ .hero-overlay{ background:linear-gradient(to top, var(--paper) 0%, rgba(250,247,242,.85) 45%, rgba(250,247,242,.25) 100%); } }
+
+    /* ─── SIGNATURE-CASE (seltenste Arbeit gross herausgestellt) ─── */
+    .case-sec{ background:var(--paper2); }
+    .case-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; }
+    .case-media{ position:relative; border-radius:8px; overflow:hidden; box-shadow:0 40px 90px -50px rgba(31,38,48,.6); }
+    .case-media img{ width:100%; aspect-ratio:4/3; object-fit:cover; display:block; transition:transform 1.2s ease; }
+    .case-media:hover img{ transform:scale(1.05); }
+    .case-flag{ position:absolute; top:18px; left:18px; background:var(--red); color:#fff; font-size:.66rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:7px 13px; border-radius:100px; }
+    .case-body .sh{ margin-top:6px; }
+    .case-step{ display:flex; gap:14px; margin:18px 0; }
+    .case-step b{ flex-shrink:0; font-family:var(--serif); font-size:1rem; color:var(--red); width:74px; }
+    .case-step p{ font-size:.92rem; color:var(--ink2); line-height:1.7; margin:0; }
+    .case-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:26px; }
+    .case-tags span{ font-size:.76rem; font-weight:600; color:var(--ink); background:#fff; border:1px solid var(--line); padding:7px 13px; border-radius:100px; }
+
+    /* ─── VORHER / NACHHER SLIDER ─── */
+    .ba-sec{ background:var(--paper); }
+    .ba{ position:relative; width:100%; aspect-ratio:16/10; border-radius:8px; overflow:hidden; user-select:none; touch-action:pan-y; box-shadow:0 40px 90px -55px rgba(31,38,48,.55); cursor:ew-resize; }
+    .ba img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none; }
+    .ba-before{ position:absolute; inset:0; clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0); }
+    .ba-before img{ filter:grayscale(.72) brightness(.82) contrast(1.06) sepia(.12); }
+    .ba-handle{ position:absolute; top:0; bottom:0; left:var(--pos,50%); width:2px; background:#fff; transform:translateX(-1px); box-shadow:0 0 0 1px rgba(31,38,48,.12); pointer-events:none; }
+    .ba-grip{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; border-radius:50%; background:#fff; color:var(--ink); display:flex; align-items:center; justify-content:center; font-size:1.1rem; box-shadow:0 6px 20px rgba(31,38,48,.3); }
+    .ba-tag{ position:absolute; top:16px; z-index:3; font-size:.66rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:6px 12px; border-radius:100px; backdrop-filter:blur(4px); }
+    .ba-tag-l{ left:16px; background:rgba(31,38,48,.72); color:#fff; }
+    .ba-tag-r{ right:16px; background:rgba(255,255,255,.85); color:var(--ink); }
+    .ba-ph{ position:absolute; bottom:14px; left:16px; z-index:3; font-size:.66rem; font-weight:600; color:#fff; background:rgba(212,46,34,.85); padding:5px 11px; border-radius:5px; letter-spacing:.02em; }
+    @media(max-width:760px){ .case-grid{ grid-template-columns:1fr; gap:28px; } .case-step b{ width:64px; } }
     /* ════════════ Ende Light-Theme ════════════ */
   </style>
 </head>
@@ -537,6 +565,39 @@
           <span class="zb">✓ Schadensanierung</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE-CASE: seltenste Arbeit gross -->
+<section class="case-sec" id="signature-case">
+  <div class="inner case-grid fu">
+    <div class="case-media">
+      <img src="assets/img/Schallreduzierung_im_Innenraum_mit_Moos_4976_original.jpg" alt="Mooswand mit Akustikwirkung — Spezialgestaltung von Scholz">
+      <span class="case-flag">Signature-Projekt</span>
+    </div>
+    <div class="case-body">
+      <div class="stag">Spezialgestaltung</div>
+      <h2 class="sh">Eine Wand, die den Raum leiser macht.</h2>
+      <div class="case-step"><b>Aufgabe</b><p>Ein offener Wohnraum hallte stark — gewünscht war eine Lösung, die Akustik verbessert, ohne wie klassische Schallschutz-Technik auszusehen.</p></div>
+      <div class="case-step"><b>Lösung</b><p>Eine vollflächige Wand aus konserviertem Islandmoos — schallschluckend, pflegefrei, ohne Bewässerung. Handverlegt, fugenlos in die Raumgeometrie eingepasst.</p></div>
+      <div class="case-step"><b>Ergebnis</b><p>Spürbar ruhigerer Raumklang und ein lebendiges Gestaltungselement, das jeder Besucher zuerst anspricht. Genau die Art Arbeit, für die Kunden gezielt kommen.</p></div>
+      <div class="case-tags"><span>Islandmoos, konserviert</span><span>Akustik + Optik</span><span>wartungsfrei</span><span>fugenlos verlegt</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VORHER / NACHHER -->
+<section class="ba-sec" id="vorher-nachher">
+  <div class="inner">
+    <div class="fu"><div class="stag">Vorher / Nachher</div><h2 class="sh">Vom Ist-Zustand zum Ergebnis.</h2><p class="ss">Malerarbeit ist Verwandlung. Ziehen Sie den Regler, um den Unterschied selbst zu sehen.</p></div>
+    <div class="ba fu d1" id="ba" style="margin-top:36px">
+      <img class="ba-after-img" src="assets/img/Hausfassade_5061_original.jpg" alt="Nachher — frisch gestaltete Fassade">
+      <div class="ba-before"><img src="assets/img/Hausfassade_5061_original.jpg" alt="Vorher — Ausgangszustand"></div>
+      <div class="ba-handle"><span class="ba-grip">⟺</span></div>
+      <span class="ba-tag ba-tag-l">Vorher</span>
+      <span class="ba-tag ba-tag-r">Nachher</span>
+      <span class="ba-ph">Vorher-Bild = Platzhalter · echtes Baustellenfoto einsetzen</span>
     </div>
   </div>
 </section>
@@ -850,6 +911,22 @@
       else{btn.textContent='Fehler — bitte nochmal';btn.disabled=false;}
     }catch{btn.textContent='Fehler — bitte nochmal';btn.disabled=false;}
   });
+
+  // Vorher/Nachher-Slider (Pointer-Drag)
+  (function(){
+    var ba=document.getElementById('ba'); if(!ba) return;
+    function setPos(clientX){
+      var r=ba.getBoundingClientRect();
+      var p=Math.min(Math.max(clientX-r.left,0),r.width);
+      ba.style.setProperty('--pos', (p/r.width*100)+'%');
+    }
+    var drag=false;
+    ba.addEventListener('pointerdown',function(e){drag=true;ba.setPointerCapture(e.pointerId);setPos(e.clientX);});
+    ba.addEventListener('pointermove',function(e){if(drag)setPos(e.clientX);});
+    ba.addEventListener('pointerup',function(){drag=false;});
+    ba.addEventListener('pointercancel',function(){drag=false;});
+    ba.style.setProperty('--pos','50%');
+  })();
 </script>
 </body>
 </html>
