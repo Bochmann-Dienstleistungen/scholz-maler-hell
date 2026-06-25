@@ -306,6 +306,100 @@
       .rg2{grid-template-columns:1fr}.uf{grid-template-columns:1fr}
       .kform{padding:24px 18px}.fb{flex-direction:column;align-items:flex-start}
     }
+
+    /* ════════════ HELLES ATELIER — Light-Theme Override (Build-Palette: Editorial Warm) ════════════ */
+    :root{ --paper:#FAF7F2; --paper2:#F3EEE6; --ink:#1f2630; --ink2:#5c6573; --line:rgba(31,38,48,.12); }
+    body{ background:var(--paper); color:var(--ink); }
+
+    /* NAV — dunkle Schrift auf hellem Hero */
+    .nav-links a{ color:rgba(31,38,48,.72); }
+    .nav-links a:hover,.nav-links a.active{ color:var(--ink); }
+    .burger span{ background:var(--ink); }
+    nav.scrolled{ background:rgba(250,247,242,.92); border-bottom:1px solid var(--line); }
+    .nav-logo img{ filter:brightness(0) saturate(0) opacity(.82); }
+
+    /* HERO — heller Scrim-Split: Foto bleibt, Text dunkel auf hellem Verlauf */
+    .hero{ background:var(--paper); }
+    .hero-slide{ filter:saturate(1) brightness(1.02) contrast(1.02); }
+    .hero-overlay{ background:
+        linear-gradient(to right, var(--paper) 0%, rgba(250,247,242,.92) 30%, rgba(250,247,242,.55) 52%, rgba(250,247,242,.05) 78%, transparent 100%),
+        linear-gradient(to top, rgba(250,247,242,.6) 0%, transparent 42%); }
+    .hero-tag{ color:var(--ink2); }
+    h1.hero-title{ color:var(--ink); text-shadow:0 1px 0 rgba(255,255,255,.4); }
+    h1.hero-title .acc{ color:var(--red); }
+    .hero-sub{ color:var(--ink2); font-weight:400; }
+    .hero-stats{ border-top:1px solid var(--line); }
+    .hs-n{ color:var(--ink); } .hs-n em{ color:var(--red); }
+    .hs-l{ color:var(--ink2); }
+    .btn-s{ color:var(--ink); border-color:var(--line); }
+    .btn-s:hover{ border-color:var(--ink); color:var(--ink); }
+    .scroll-hint{ color:rgba(31,38,48,.35); }
+    .scroll-line{ background:linear-gradient(to bottom,rgba(31,38,48,.3),transparent); }
+
+    /* TICKER — bewusst EIN dunkles Akzentband (Rhythmus), aber wärmer */
+    .ticker{ background:var(--ink); }
+
+    /* SECTIONS — helle Flächen, ruhiger Wechsel paper / weiß */
+    .ss{ color:var(--ink2); }
+    .leistungen{ background:var(--paper2); }
+    .sc{ background:#fff; border:1px solid var(--line); }
+    .sc:hover{ background:var(--ink); border-color:var(--ink); }
+    .scd{ color:var(--ink2); }
+    .ueber{ background:var(--paper); }
+    .ub{ color:var(--ink2); }
+
+    /* SIGNATURE — Farb-Swatch-Band (Maler = Farbe ist sein Produkt) */
+    .swatch-sec{ background:var(--paper); }
+    .swatch-sec .inner{ padding-top:0; }
+    .swatches{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:2px; border:1px solid var(--line); border-radius:6px; overflow:hidden; }
+    .sw{ position:relative; aspect-ratio:3/4; display:flex; align-items:flex-end; padding:16px; cursor:default; overflow:hidden; transition:flex .3s; }
+    .sw::after{ content:''; position:absolute; inset:0; background:var(--swimg) center/cover; opacity:0; transition:opacity .45s ease; }
+    .sw:hover::after{ opacity:.5; }
+    .sw-name{ position:relative; z-index:2; font-size:.82rem; font-weight:700; letter-spacing:.02em; }
+    .sw-hex{ position:relative; z-index:2; display:block; font-size:.66rem; font-weight:600; letter-spacing:.12em; opacity:.7; margin-top:2px; font-variant-numeric:tabular-nums; }
+
+    /* SHOWREEL — heller, Foto kommt durch */
+    .sr-video{ filter:brightness(.92) saturate(1); }
+    .sr-overlay{ background:linear-gradient(135deg, rgba(250,247,242,.78) 0%, rgba(243,238,230,.62) 100%); }
+    .sr-tag{ color:var(--ink2); }
+    .sr-tag::before,.sr-tag::after{ background:var(--line); }
+    .sr-title{ color:var(--ink); text-shadow:0 1px 0 rgba(255,255,255,.5); }
+    .sr-title em{ color:var(--red); }
+    .sr-sub{ color:var(--ink2); }
+
+    /* REFERENZEN — helle Galerie, Fotos leuchten */
+    .referenzen{ background:#fff; }
+    .referenzen .sh{ color:var(--ink); }
+    .referenzen .ss{ color:var(--ink2); }
+    .rc-img{ filter:brightness(1) saturate(1); }
+    .rc:hover .rc-img{ filter:brightness(1.04) saturate(1.05); }
+    .rc-type{ color:var(--red); }
+
+    /* BEWERTUNGEN */
+    .bewertungen{ background:var(--paper2); }
+
+    /* KONTAKT — hell, helles Formular */
+    .kontakt{ background:var(--paper); }
+    .kontakt .sh{ color:var(--ink); }
+    .kontakt .ss{ color:var(--ink2); }
+    .kic{ background:#fff; border:1px solid var(--line); color:var(--ink); }
+    .kil{ color:var(--ink2); }
+    .kiv{ color:var(--ink); } .kiv:hover{ color:var(--red); }
+    .kiv-sm{ color:var(--ink2); }
+    .kform{ background:#fff; border:1px solid var(--line); box-shadow:0 24px 60px -40px rgba(31,38,48,.4); }
+    .kft{ color:var(--ink); }
+    .fg label{ color:var(--ink2); }
+    .fg input,.fg select,.fg textarea{ background:var(--paper); border:1px solid var(--line); color:var(--ink); }
+    .fg input::placeholder,.fg textarea::placeholder{ color:rgba(31,38,48,.35); }
+    .fg input:focus,.fg select:focus,.fg textarea:focus{ border-color:var(--red); }
+    .fg select option{ background:#fff; color:var(--ink); }
+    .fnote{ color:var(--ink2); }
+
+    /* FOOTER — bewusst dunkel als ruhiger Abschluss (warmes Anthrazit) */
+    footer{ background:#1a212b; }
+
+    @media(max-width:600px){ .hero-overlay{ background:linear-gradient(to top, var(--paper) 0%, rgba(250,247,242,.85) 45%, rgba(250,247,242,.25) 100%); } }
+    /* ════════════ Ende Light-Theme ════════════ */
   </style>
 </head>
 <body>
@@ -374,6 +468,23 @@
     <span class="ti">Malerarbeiten<span class="td"></span></span><span class="ti">Wandgestaltung<span class="td"></span></span><span class="ti">Bodenverlegung<span class="td"></span></span><span class="ti">Fassadenanstrich<span class="td"></span></span><span class="ti">Trockenbau<span class="td"></span></span><span class="ti">Lackierarbeiten<span class="td"></span></span><span class="ti">Bootslackierung<span class="td"></span></span><span class="ti">Schadensanierung<span class="td"></span></span><span class="ti">Crimmitschau · Zwickau · Werdau · Glauchau<span class="td"></span></span>
   </div>
 </div>
+
+<!-- SIGNATURE: FARB-SWATCHES (Maler = Farbe ist sein Produkt) -->
+<section class="swatch-sec">
+  <div class="inner" style="padding-bottom:0">
+    <div class="fu"><div class="stag">Unsere Handschrift in Farbe</div><h2 class="sh">Jede Fläche eine Entscheidung.</h2><p class="ss">Ein Auszug aus realisierten Projekten — fahren Sie über einen Farbton, um die Arbeit dahinter zu sehen.</p></div>
+  </div>
+  <div class="inner" style="padding-top:32px">
+    <div class="swatches fu d1">
+      <div class="sw" style="background:#C9C2B6;color:#2a2620;--swimg:url('assets/img/Betonoptik_5798_original.jpg')"><div><span class="sw-name">Betonoptik Greige</span><span class="sw-hex">#C9C2B6</span></div></div>
+      <div class="sw" style="background:#7C8A6F;color:#fff;--swimg:url('assets/img/Schallreduzierung_im_Innenraum_mit_Moos_4976_original.jpg')"><div><span class="sw-name">Moosgrün Akustik</span><span class="sw-hex">#7C8A6F</span></div></div>
+      <div class="sw" style="background:#B98A5E;color:#fff;--swimg:url('assets/img/Fassadenmalerei_5062_original.jpg')"><div><span class="sw-name">Fassade Ocker</span><span class="sw-hex">#B98A5E</span></div></div>
+      <div class="sw" style="background:#9C5B3B;color:#fff;--swimg:url('assets/img/Kutsche_Lackierung_4965_original.jpg')"><div><span class="sw-name">Lack Kastanie</span><span class="sw-hex">#9C5B3B</span></div></div>
+      <div class="sw" style="background:#3B4654;color:#fff;--swimg:url('assets/img/Innenraumgestaltung_Malerarbeiten_4978_original.jpg')"><div><span class="sw-name">Innenraum Schiefer</span><span class="sw-hex">#3B4654</span></div></div>
+      <div class="sw" style="background:#D8C7AE;color:#2a2620;--swimg:url('assets/img/Laminat_5058_original.jpg')"><div><span class="sw-name">Boden Sand</span><span class="sw-hex">#D8C7AE</span></div></div>
+    </div>
+  </div>
+</section>
 
 <!-- LEISTUNGEN -->
 <section class="leistungen" id="leistungen">
