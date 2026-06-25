@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Referenzen des Malerfachbetriebs Sören Scholz — abgeschlossene Projekte in Crimmitschau, Zwickau und Umgebung. Betonoptik, Lackierung, Bodenbeläge & mehr.">
+  <title>Referenzen – Malerfachbetrieb Sören Scholz | Crimmitschau</title>
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link href="https://fonts.bunny.net/css?family=playfair-display:700,700i,900,900i&family=inter:300,400,500,600,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin:0;padding:0;box-sizing:border-box; }
+    :root {
+      --black:  #080d14;
+      --dark:   #0d1828;
+      --mid:    #132040;
+      --navy:   #1d3060;
+      --red:    #d42e22;
+      --red2:   #b82518;
+      --gold:   #f4c200;
+      --white:  #FAFAF8;
+      --light:  #F2EFE9;
+      --gray:   #888;
+      --border: rgba(255,255,255,.07);
+      --serif:  'Playfair Display', Georgia, serif;
+      --sans:   'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--sans);background:var(--dark);color:#fff;overflow-x:hidden; }
+
+    /* NAV */
+    nav { position:fixed;top:0;left:0;right:0;z-index:999;height:72px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,13,20,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border); }
+    .nav-logo img { height:44px;display:block; }
+    .nav-links { display:flex;align-items:center;gap:36px;list-style:none; }
+    .nav-links a { color:rgba(255,255,255,.7);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.04em;transition:color .2s; }
+    .nav-links a:hover,.nav-links a.active { color:#fff; }
+    .nav-cta { background:var(--red)!important;color:#fff!important;padding:10px 22px;border-radius:3px;font-weight:600!important; }
+    .nav-cta:hover { background:var(--red2)!important; }
+    .burger { display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px; }
+    .burger span { display:block;width:22px;height:1.5px;background:#fff;transition:.3s; }
+    .mob { display:none;position:fixed;top:72px;left:0;right:0;z-index:998;background:rgba(8,13,20,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:28px 32px 36px;flex-direction:column;gap:18px; }
+    .mob.open { display:flex; }
+    .mob a { color:rgba(255,255,255,.75);text-decoration:none;font-size:.95rem;padding:10px 0;border-bottom:1px solid var(--border); }
+    .mob .nav-cta { text-align:center;padding:14px;border-radius:3px;border-bottom:none;margin-top:6px; }
+
+    /* PAGE HERO */
+    .page-hero { padding-top:72px;position:relative;overflow:hidden;background:var(--black); }
+    .ph-img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.18) saturate(.6); }
+    .ph-overlay { position:absolute;inset:0;background:linear-gradient(to right,rgba(8,13,20,.95) 0%,rgba(8,13,20,.5) 100%); }
+    .ph-inner { position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:96px 56px 88px; }
+    .breadcrumb { font-size:.72rem;color:rgba(255,255,255,.28);letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px; }
+    .breadcrumb a { color:rgba(255,255,255,.28);text-decoration:none;transition:color .2s; }
+    .breadcrumb a:hover { color:rgba(255,255,255,.6); }
+    .breadcrumb span { margin:0 8px; }
+    .stag { display:inline-flex;align-items:center;gap:8px;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px; }
+    .stag::before { content:'';display:block;width:22px;height:1px; }
+    .stag-light { color:rgba(255,255,255,.35); }
+    .stag-light::before { background:rgba(255,255,255,.2); }
+    .stag-red { color:var(--red); }
+    .stag-red::before { background:var(--red); }
+    .ph-title { font-family:var(--serif);font-size:clamp(2.6rem,5vw,4.4rem);font-weight:900;color:#fff;line-height:1.04;letter-spacing:-.025em;margin-bottom:22px; }
+    .ph-title em { font-style:italic;color:var(--gold); }
+    .ph-sub { font-size:1rem;color:rgba(255,255,255,.45);font-weight:300;line-height:1.78;max-width:500px;margin-bottom:36px; }
+    .ph-stats { display:flex;gap:40px;flex-wrap:wrap; }
+    .phs { text-align:left; }
+    .phs-n { font-family:var(--serif);font-size:2rem;font-weight:900;color:#fff;line-height:1; }
+    .phs-n em { color:var(--gold);font-style:normal; }
+    .phs-l { font-size:.68rem;color:rgba(255,255,255,.35);letter-spacing:.1em;text-transform:uppercase;margin-top:3px; }
+
+    /* FILTER BAR */
+    .filter-bar { background:var(--black);border-bottom:1px solid rgba(255,255,255,.05);position:sticky;top:72px;z-index:90; }
+    .filter-inner { max-width:1200px;margin:0 auto;padding:0 56px;display:flex;align-items:center;gap:8px;overflow-x:auto; }
+    .filter-inner::-webkit-scrollbar { display:none; }
+    .fb-btn { flex-shrink:0;background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:10px 20px;border-radius:100px;font-size:.78rem;font-weight:500;cursor:pointer;font-family:var(--sans);transition:all .2s;white-space:nowrap;letter-spacing:.02em;margin:14px 0; }
+    .fb-btn:hover { border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.85); }
+    .fb-btn.active { background:var(--red);border-color:var(--red);color:#fff; }
+
+    /* MASONRY GRID */
+    .ref-section { max-width:1200px;margin:0 auto;padding:64px 56px 100px; }
+    .ref-grid { columns:3;column-gap:4px; }
+    .ref-item { break-inside:avoid;position:relative;overflow:hidden;margin-bottom:4px;cursor:pointer; }
+    .ref-item img { width:100%;display:block;transition:transform .7s ease,filter .4s;filter:brightness(.82) saturate(.9); }
+    .ref-item:hover img { transform:scale(1.05);filter:brightness(.95) saturate(1.1); }
+    .ref-overlay { position:absolute;inset:0;background:linear-gradient(to top,rgba(8,13,20,.9) 0%,rgba(8,13,20,.2) 50%,transparent 100%);opacity:0;transition:opacity .35s;display:flex;flex-direction:column;justify-content:flex-end;padding:22px; }
+    .ref-item:hover .ref-overlay { opacity:1; }
+    .ref-label { color:#fff;font-weight:600;font-size:.92rem;margin-bottom:3px; }
+    .ref-cat { color:var(--gold);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase; }
+    .ref-item[data-cat].hidden { display:none; }
+
+    /* LIGHTBOX */
+    .lb { display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.94);backdrop-filter:blur(12px);align-items:center;justify-content:center; }
+    .lb.open { display:flex; }
+    .lb-img { max-width:90vw;max-height:88vh;object-fit:contain;border-radius:2px; }
+    .lb-close { position:absolute;top:24px;right:28px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;font-family:var(--sans); }
+    .lb-close:hover { background:var(--red);color:#fff;border-color:var(--red); }
+    .lb-caption { position:absolute;bottom:28px;left:50%;transform:translateX(-50%);text-align:center; }
+    .lb-cap-label { color:#fff;font-size:.95rem;font-weight:600; }
+    .lb-cap-cat { color:var(--gold);font-size:.75rem;margin-top:3px;letter-spacing:.08em;text-transform:uppercase; }
+    .lb-prev,.lb-next { position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);width:50px;height:50px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:var(--sans); }
+    .lb-prev { left:24px; }
+    .lb-next { right:24px; }
+    .lb-prev:hover,.lb-next:hover { background:var(--red);color:#fff;border-color:var(--red); }
+
+    /* CTA STRIP */
+    .cta-strip { background:var(--navy);padding:88px 56px; }
+    .cs-inner { max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:36px; }
+    .cs-text .sh { font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;line-height:1.1;letter-spacing:-.02em;margin-bottom:12px;color:#fff; }
+    .cs-text .ss { font-size:.95rem;font-weight:300;line-height:1.75;color:rgba(255,255,255,.45); }
+    .cs-btns { display:flex;gap:14px;flex-wrap:wrap; }
+    .btn-p { display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;padding:16px 36px;border-radius:3px;font-size:.9rem;font-weight:600;text-decoration:none;letter-spacing:.03em;transition:background .2s,transform .2s;box-shadow:0 4px 24px rgba(212,46,34,.35); }
+    .btn-p:hover { background:var(--red2);transform:translateY(-1px); }
+    .btn-s { display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.8);padding:16px 36px;border-radius:3px;border:1px solid rgba(255,255,255,.22);font-size:.9rem;font-weight:500;text-decoration:none;transition:border-color .2s,color .2s,transform .2s; }
+    .btn-s:hover { border-color:rgba(255,255,255,.5);color:#fff;transform:translateY(-1px); }
+
+    /* FOOTER */
+    footer { background:#030609;border-top:1px solid rgba(255,255,255,.04); }
+    .fm { max-width:1200px;margin:0 auto;padding:56px 56px 36px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:56px; }
+    .fl img { height:42px;display:block;margin-bottom:14px;filter:brightness(0) invert(.5); }
+    .ft { font-size:.8rem;color:rgba(255,255,255,.25);line-height:1.65;max-width:240px;margin-bottom:20px; }
+    .fsoc { display:flex;gap:8px; }
+    .fsl { width:34px;height:34px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:5px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.35);text-decoration:none;font-size:.8rem;transition:background .2s,color .2s,border-color .2s; }
+    .fsl:hover { background:var(--red);color:#fff;border-color:var(--red); }
+    .fct { font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:14px; }
+    .fcl { list-style:none;display:flex;flex-direction:column;gap:9px; }
+    .fcl a,.fcl button { color:rgba(255,255,255,.45);text-decoration:none;font-size:.84rem;transition:color .2s;background:none;border:none;cursor:pointer;font-family:var(--sans);padding:0;text-align:left; }
+    .fcl a:hover,.fcl button:hover { color:rgba(255,255,255,.8); }
+    .fb2 { max-width:1200px;margin:0 auto;padding:18px 56px;border-top:1px solid rgba(255,255,255,.04);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px; }
+    .fbc { font-size:.75rem;color:rgba(255,255,255,.18); }
+    .fbl { display:flex;gap:20px; }
+    .fbl button { font-size:.75rem;color:rgba(255,255,255,.18);background:none;border:none;cursor:pointer;font-family:var(--sans);transition:color .2s; }
+    .fbl button:hover { color:rgba(255,255,255,.45); }
+
+    /* FLOAT WA */
+    .wa-float { position:fixed;bottom:28px;right:28px;z-index:900;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s;text-decoration:none; }
+    .wa-float:hover { transform:scale(1.1); }
+    .wa-float svg { width:26px;height:26px;fill:#fff; }
+    .wa-pulse { position:absolute;width:100%;height:100%;border-radius:50%;background:rgba(37,211,102,.4);animation:wapulse 2.5s ease-out infinite; }
+    @keyframes wapulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.8);opacity:0}}
+
+    /* SLIDER */
+    .slider-overlay { display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1100;backdrop-filter:blur(4px); }
+    .slider-overlay.open { display:block; }
+    .slider-panel { position:fixed;top:0;right:0;width:min(640px,100%);height:100vh;background:var(--dark);z-index:1101;overflow-y:auto;transform:translateX(100%);transition:transform .38s cubic-bezier(.25,.46,.45,.94);border-left:1px solid rgba(255,255,255,.08); }
+    .slider-panel.open { transform:translateX(0); }
+    .slider-head { position:sticky;top:0;background:var(--dark);padding:20px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);z-index:1; }
+    .slider-head h2 { font-family:var(--serif);font-size:1.2rem;font-weight:700;color:#fff; }
+    .slider-close { background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;font-family:var(--sans); }
+    .slider-close:hover { background:var(--red);color:#fff;border-color:var(--red); }
+    .slider-body { padding:36px 32px; }
+    .slider-body h3 { font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin:28px 0 10px; }
+    .slider-body h3:first-child { margin-top:0; }
+    .slider-body p,.slider-body address { font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.8;font-style:normal; }
+    .slider-body a { color:var(--gold);text-decoration:none; }
+    .slider-body hr { border:none;border-top:1px solid rgba(255,255,255,.07);margin:24px 0; }
+    .slider-body ul { padding-left:18px;margin-top:8px; }
+    .slider-body li { font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:4px; }
+
+    /* FADE-UP */
+    .fu { opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease; }
+    .fu.vis { opacity:1;transform:translateY(0); }
+    .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+    @media(max-width:960px){
+      nav { padding:0 24px; }
+      .nav-links { display:none; }
+      .burger { display:flex; }
+      .mob { padding:28px 24px 36px; }
+      .ph-inner { padding:72px 24px 64px; }
+      .filter-inner { padding:0 24px; }
+      .ref-section { padding:48px 24px 80px; }
+      .ref-grid { columns:2; }
+      .cta-strip { padding:64px 24px; }
+      .fm { grid-template-columns:1fr;gap:32px;padding:40px 24px 24px; }
+      .fb2 { padding:16px 24px; }
+      .lb-prev { left:10px; }
+      .lb-next { right:10px; }
+    }
+    @media(max-width:500px){
+      .ref-grid { columns:1; }
+      .ph-title { font-size:2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="assets/img/scholz_logo_skaliert.png" alt="Malerfachbetrieb Sören Scholz"></a>
+  <ul class="nav-links">
+    <li><a href="leistungen.html">Leistungen</a></li>
+    <li><a href="index.html#ueber">Über uns</a></li>
+    <li><a href="referenzen.html" class="active">Referenzen</a></li>
+    <li><a href="index.html#bewertungen">Bewertungen</a></li>
+    <li><a href="jobs.html">Jobs</a></li>
+    <li><a href="index.html#kontakt" class="nav-cta">Anfragen</a></li>
+  </ul>
+  <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mob" id="mob">
+  <a href="leistungen.html" onclick="closeMob()">Leistungen</a>
+  <a href="index.html#ueber" onclick="closeMob()">Über uns</a>
+  <a href="referenzen.html" onclick="closeMob()">Referenzen</a>
+  <a href="index.html#bewertungen" onclick="closeMob()">Bewertungen</a>
+  <a href="jobs.html" onclick="closeMob()">Jobs</a>
+  <a href="index.html#kontakt" class="nav-cta" onclick="closeMob()">Kostenlos anfragen</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <img class="ph-img" src="assets/img/Schallreduzierung_im_Innenraum_mit_Moos_4976_original.jpg" alt="Mooswand Referenz">
+  <div class="ph-overlay"></div>
+  <div class="ph-inner">
+    <div class="breadcrumb"><a href="index.html">Startseite</a><span>›</span>Referenzen</div>
+    <div class="stag stag-light">Abgeschlossene Projekte</div>
+    <h1 class="ph-title">Unsere Arbeit<br>spricht für <em>sich.</em></h1>
+    <p class="ph-sub">Echte Projekte. Echte Kunden. Von der Betonoptik über die Bootslackierung bis zum Parkettboden — ein Auszug aus 500+ abgeschlossenen Arbeiten.</p>
+    <div class="ph-stats">
+      <div class="phs"><div class="phs-n">500<em>+</em></div><div class="phs-l">Projekte</div></div>
+      <div class="phs"><div class="phs-n">13<em>+</em></div><div class="phs-l">Jahre</div></div>
+      <div class="phs"><div class="phs-n">4.9</div><div class="phs-l">Google Rating</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="fb-btn active" data-filter="all">Alle Projekte</button>
+    <button class="fb-btn" data-filter="wandgestaltung">Wandgestaltung</button>
+    <button class="fb-btn" data-filter="bodenverlegung">Bodenverlegung</button>
+    <button class="fb-btn" data-filter="lackierung">Lackierung</button>
+    <button class="fb-btn" data-filter="fassade">Fassade</button>
+    <button class="fb-btn" data-filter="malerarbeiten">Malerarbeiten</button>
+  </div>
+</div>
+
+<!-- REFERENZEN GRID -->
+<div class="ref-section">
+  <div class="ref-grid" id="refGrid">
+
+    <div class="ref-item fu" data-cat="wandgestaltung" onclick="openLightbox(this)">
+      <img src="assets/img/Schallreduzierung_im_Innenraum_mit_Moos_4976_original.jpg" alt="Mooswand" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Mooswand & Akustikgestaltung</div><div class="ref-cat">Wandgestaltung</div></div>
+    </div>
+
+    <div class="ref-item fu d1" data-cat="wandgestaltung" onclick="openLightbox(this)">
+      <img src="assets/img/Betonoptik_5796_original.jpg" alt="Betonoptik" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Betonoptik — Wohnzimmer</div><div class="ref-cat">Wandgestaltung</div></div>
+    </div>
+
+    <div class="ref-item fu d2" data-cat="wandgestaltung" onclick="openLightbox(this)">
+      <img src="assets/img/Betonoptik_5797_original.jpg" alt="Betonoptik Detail" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Betonoptik — Detail</div><div class="ref-cat">Wandgestaltung</div></div>
+    </div>
+
+    <div class="ref-item fu" data-cat="wandgestaltung" onclick="openLightbox(this)">
+      <img src="assets/img/Betonoptik_5798_original.jpg" alt="Betonoptik Treppe" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Betonoptik — Treppenhaus</div><div class="ref-cat">Wandgestaltung</div></div>
+    </div>
+
+    <div class="ref-item fu d1" data-cat="wandgestaltung" onclick="openLightbox(this)">
+      <img src="assets/img/Betonoptik_5800_original.jpg" alt="Betonoptik Wand" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Betonoptik — Akzent</div><div class="ref-cat">Wandgestaltung</div></div>
+    </div>
+
+    <div class="ref-item fu d2" data-cat="wandgestaltung" onclick="openLightbox(this)">
+      <img src="assets/img/Animalprint_5060_original.jpg" alt="Animalprint Wandgestaltung" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Animalprint</div><div class="ref-cat">Wandgestaltung</div></div>
+    </div>
+
+    <div class="ref-item fu" data-cat="malerarbeiten" onclick="openLightbox(this)">
+      <img src="assets/img/Tapete_braun_mit_geometrischen_Mustern_3_original.jpg" alt="Tapete geometrisch" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Tapete — Geometrisches Muster</div><div class="ref-cat">Malerarbeiten</div></div>
+    </div>
+
+    <div class="ref-item fu d1" data-cat="malerarbeiten" onclick="openLightbox(this)">
+      <img src="assets/img/Innenraumgestaltung_Malerarbeiten_4978_original.jpg" alt="Innenraumgestaltung" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Innenraumgestaltung</div><div class="ref-cat">Malerarbeiten</div></div>
+    </div>
+
+    <div class="ref-item fu d2" data-cat="bodenverlegung" onclick="openLightbox(this)">
+      <img src="assets/img/Detailbild_Parkett_5054_original.jpg" alt="Parkett Detail" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Parkett — Detailansicht</div><div class="ref-cat">Bodenverlegung</div></div>
+    </div>
+
+    <div class="ref-item fu" data-cat="bodenverlegung" onclick="openLightbox(this)">
+      <img src="assets/img/Laminat_5058_original.jpg" alt="Laminat verlegen" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Laminatverlegung</div><div class="ref-cat">Bodenverlegung</div></div>
+    </div>
+
+    <div class="ref-item fu d1" data-cat="bodenverlegung" onclick="openLightbox(this)">
+      <img src="assets/img/Münzen_in_Eproxit_5057_original.jpg" alt="Münzen Epoxidharz" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Münzen in Epoxidharz</div><div class="ref-cat">Bodenverlegung</div></div>
+    </div>
+
+    <div class="ref-item fu d2" data-cat="lackierung" onclick="openLightbox(this)">
+      <img src="assets/img/Kutsche_Lackierung_4965_original.jpg" alt="Kutsche Lackierung" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Kutschenlackierung</div><div class="ref-cat">Lackierung</div></div>
+    </div>
+
+    <div class="ref-item fu" data-cat="lackierung" onclick="openLightbox(this)">
+      <img src="assets/img/Kutsche_Lackierung_4970_original.jpg" alt="Kutsche Detail" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Kutsche — Detailarbeit</div><div class="ref-cat">Lackierung</div></div>
+    </div>
+
+    <div class="ref-item fu d1" data-cat="lackierung" onclick="openLightbox(this)">
+      <img src="assets/img/Kutsche_Lackierung_4974_original.jpg" alt="Kutsche fertig" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Kutsche — Fertigstellung</div><div class="ref-cat">Lackierung</div></div>
+    </div>
+
+    <div class="ref-item fu d2" data-cat="lackierung" onclick="openLightbox(this)">
+      <img src="assets/img/Lackierung_einer_Holztreppe_3_original.jpg" alt="Holztreppe lackiert" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Holztreppe lackiert</div><div class="ref-cat">Lackierung</div></div>
+    </div>
+
+    <div class="ref-item fu" data-cat="fassade" onclick="openLightbox(this)">
+      <img src="assets/img/Hausfassade_5061_original.jpg" alt="Hausfassade" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Fassadenanstrich</div><div class="ref-cat">Fassade</div></div>
+    </div>
+
+    <div class="ref-item fu d1" data-cat="fassade" onclick="openLightbox(this)">
+      <img src="assets/img/Fassadenmalerei_5062_original.jpg" alt="Fassadenmalerei" loading="lazy">
+      <div class="ref-overlay"><div class="ref-label">Fassadengestaltung</div><div class="ref-cat">Fassade</div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CTA STRIP -->
+<section class="cta-strip">
+  <div class="cs-inner">
+    <div class="cs-text fu">
+      <div class="stag stag-light">Ihr nächstes Projekt</div>
+      <h2 class="cs-text sh">Auch Ihre Wände verdienen mehr.</h2>
+      <p class="ss">Kostenlose Besichtigung und Angebot innerhalb von 24h.</p>
+    </div>
+    <div class="cs-btns fu d2">
+      <a href="index.html#kontakt" class="btn-p">Jetzt anfragen →</a>
+      <a href="leistungen.html" class="btn-s">Alle Leistungen</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fm">
+    <div>
+      <div class="fl"><img src="assets/img/scholz_logo_skaliert.png" alt="Scholz Maler"></div>
+      <p class="ft">Malerfachbetrieb Sören Scholz · Neurmarkt 9 · 08451 Crimmitschau. Malerarbeiten, Wandgestaltung, Bodenverlegung und mehr — seit 2011 für die Region.</p>
+      <div class="fsoc">
+        <a class="fsl" href="https://instagram.com/malerfachbetriebsoren" target="_blank" rel="noopener" title="Instagram">IG</a>
+        <a class="fsl" href="https://wa.me/4916297936380" target="_blank" rel="noopener" title="WhatsApp">WA</a>
+      </div>
+    </div>
+    <div>
+      <div class="fct">Leistungen</div>
+      <ul class="fcl">
+        <li><a href="leistungen.html">Malerarbeiten</a></li>
+        <li><a href="leistungen.html">Wandgestaltung</a></li>
+        <li><a href="leistungen.html">Bodenverlegung</a></li>
+        <li><a href="leistungen.html">Fassadenanstriche</a></li>
+        <li><a href="leistungen.html">Bootslackierung</a></li>
+        <li><a href="jobs.html">Jobs & Ausbildung</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fct">Kontakt & Rechtliches</div>
+      <ul class="fcl">
+        <li><a href="tel:+491629793638">0162 9793638</a></li>
+        <li><a href="mailto:buero@scholzmaler.de">buero@scholzmaler.de</a></li>
+        <li><button onclick="openSlider('imp')">Impressum</button></li>
+        <li><button onclick="openSlider('dsgvo')">Datenschutz</button></li>
+        <li><a href="referenzen.html">Referenzen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb2">
+    <span class="fbc">© 2026 Malerfachbetrieb Sören Scholz · Einzelunternehmen · Crimmitschau</span>
+    <div class="fbl">
+      <button onclick="openSlider('imp')">Impressum</button>
+      <button onclick="openSlider('dsgvo')">Datenschutz</button>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a class="wa-float" href="https://wa.me/4916297936380" target="_blank" rel="noopener" title="WhatsApp">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <button class="lb-prev" onclick="lbNav(-1)">‹</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-next" onclick="lbNav(1)">›</button>
+  <div class="lb-caption">
+    <div class="lb-cap-label" id="lbLabel"></div>
+    <div class="lb-cap-cat" id="lbCat"></div>
+  </div>
+</div>
+
+<!-- IMPRESSUM SLIDER -->
+<div class="slider-overlay" id="imp-overlay" onclick="closeSlider('imp')"></div>
+<div class="slider-panel" id="imp-panel">
+  <div class="slider-head"><h2>Impressum</h2><button class="slider-close" onclick="closeSlider('imp')">✕</button></div>
+  <div class="slider-body">
+    <h3>Angaben gemäß § 5 TMG</h3>
+    <address>Malerfachbetrieb Sören Scholz<br>Einzelunternehmen<br>Neurmarkt 9<br>08451 Crimmitschau<br>Deutschland</address>
+    <h3>Kontakt</h3>
+    <p>Telefon: <a href="tel:+491629793638">0162 9793638</a><br>E-Mail: <a href="mailto:buero@scholzmaler.de">buero@scholzmaler.de</a></p>
+    <h3>Umsatzsteuer-ID</h3>
+    <p>USt-ID gemäß § 27a UStG: DE276176505</p>
+    <hr>
+    <h3>Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)</h3>
+    <p>Sören Scholz, Neurmarkt 9, 08451 Crimmitschau</p>
+  </div>
+</div>
+
+<!-- DATENSCHUTZ SLIDER -->
+<div class="slider-overlay" id="dsgvo-overlay" onclick="closeSlider('dsgvo')"></div>
+<div class="slider-panel" id="dsgvo-panel">
+  <div class="slider-head"><h2>Datenschutzerklärung</h2><button class="slider-close" onclick="closeSlider('dsgvo')">✕</button></div>
+  <div class="slider-body">
+    <h3>Verantwortlicher</h3>
+    <p>Sören Scholz · Neurmarkt 9 · 08451 Crimmitschau<br>Tel: <a href="tel:+491629793638">0162 9793638</a> · <a href="mailto:buero@scholzmaler.de">buero@scholzmaler.de</a></p>
+    <h3>Datenerfassung</h3>
+    <p>Beim Besuch dieser Website werden technische Daten automatisch erfasst. Diese dienen ausschließlich dem technischen Betrieb.</p>
+    <h3>Kontaktformular</h3>
+    <p>Formulardaten werden über <strong>Formspree, Inc.</strong> verarbeitet. Datenschutzerklärung: <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">formspree.io/legal/privacy-policy</a></p>
+    <hr>
+    <h3>Ihre Rechte (DSGVO)</h3>
+    <ul>
+      <li>Auskunft über gespeicherte Daten (Art. 15)</li>
+      <li>Berichtigung oder Löschung (Art. 16, 17)</li>
+      <li>Einschränkung der Verarbeitung (Art. 18)</li>
+      <li>Widerspruch (Art. 21) · Datenübertragbarkeit (Art. 20)</li>
+    </ul>
+    <p style="margin-top:12px">Aufsichtsbehörde: Sächsischer Datenschutzbeauftragter, Devrientstraße 5, 01067 Dresden</p>
+    <hr>
+    <p style="font-size:.75rem;color:rgba(255,255,255,.25)">Stand: 2024</p>
+  </div>
+</div>
+
+<script>
+  function toggleMenu(){ document.getElementById('mob').classList.toggle('open'); }
+  function closeMob(){ document.getElementById('mob').classList.remove('open'); }
+  function openSlider(id){ document.getElementById(id+'-overlay').classList.add('open'); document.getElementById(id+'-panel').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeSlider(id){ document.getElementById(id+'-overlay').classList.remove('open'); document.getElementById(id+'-panel').classList.remove('open'); document.body.style.overflow=''; }
+
+  // Filter
+  const filterBtns = document.querySelectorAll('.fb-btn');
+  const items = document.querySelectorAll('.ref-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      items.forEach(item => {
+        if(f === 'all' || item.dataset.cat === f) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Lightbox
+  let lbItems = [], lbIdx = 0;
+  function buildLbItems(){
+    lbItems = Array.from(document.querySelectorAll('.ref-item:not(.hidden)'));
+  }
+  function openLightbox(el){
+    buildLbItems();
+    lbIdx = lbItems.indexOf(el);
+    showLb();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function showLb(){
+    const el = lbItems[lbIdx];
+    document.getElementById('lbImg').src = el.querySelector('img').src;
+    document.getElementById('lbLabel').textContent = el.querySelector('.ref-label').textContent;
+    document.getElementById('lbCat').textContent = el.querySelector('.ref-cat').textContent;
+  }
+  function closeLb(){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeLightbox(e){ if(e.target === document.getElementById('lightbox')) closeLb(); }
+  function lbNav(dir){
+    lbIdx = (lbIdx + dir + lbItems.length) % lbItems.length;
+    showLb();
+  }
+  document.addEventListener('keydown', e => {
+    if(!document.getElementById('lightbox').classList.contains('open')) return;
+    if(e.key === 'ArrowLeft') lbNav(-1);
+    if(e.key === 'ArrowRight') lbNav(1);
+    if(e.key === 'Escape'){ closeLb(); closeSlider('imp'); closeSlider('dsgvo'); }
+  });
+
+  // Fade-up
+  const obs = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); }); }, {threshold:.08});
+  document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

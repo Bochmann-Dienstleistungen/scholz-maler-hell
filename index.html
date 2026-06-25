@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Malerfachbetrieb Sören Scholz in Crimmitschau – Malerarbeiten, Fassaden, Trockenbau, Wandgestaltung & mehr. Seit 2011. Jetzt kostenlos anfragen.">
+  <title>Malerfachbetrieb Sören Scholz | Crimmitschau & Umgebung</title>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Malerfachbetrieb Sören Scholz","image":"assets/img/scholz_logo_skaliert.png","address":{"@type":"PostalAddress","streetAddress":"Neurmarkt 9","addressLocality":"Crimmitschau","postalCode":"08451","addressCountry":"DE"},"telephone":"0162-9793638","email":"buero@scholzmaler.de","url":"https://scholzmaler.de","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday"],"opens":"07:30","closes":"13:00"}],"priceRange":"€€","areaServed":"Crimmitschau, Zwickau, Werdau, Glauchau"}</script>
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link href="https://fonts.bunny.net/css?family=playfair-display:700,700i,900,900i&family=inter:300,400,500,600,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin:0;padding:0;box-sizing:border-box; }
+    :root {
+      --black:  #080d14;
+      --dark:   #0d1828;
+      --mid:    #132040;
+      --navy:   #1d3060;
+      --red:    #d42e22;
+      --red2:   #b82518;
+      --gold:   #f4c200;
+      --white:  #FAFAF8;
+      --light:  #F2EFE9;
+      --gray:   #888;
+      --border: rgba(255,255,255,.07);
+      --serif:  'Playfair Display', Georgia, serif;
+      --sans:   'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--sans);background:var(--white);color:var(--black);overflow-x:hidden; }
+
+    /* ─── COOKIE ─── */
+    #cookie-banner { position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(8,13,20,.97);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:16px 56px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap; }
+    #cookie-banner p { font-size:13px;color:rgba(255,255,255,.45);line-height:1.5;flex:1 1 300px; }
+    #cookie-banner a { color:var(--gold);text-decoration:none; }
+    .cb-btns { display:flex;gap:10px; }
+    .cb-btns button { padding:8px 20px;border:none;border-radius:3px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans); }
+    .cb-accept { background:var(--red);color:#fff; }
+    .cb-decline { background:rgba(255,255,255,.07);color:rgba(255,255,255,.5); }
+    #cookie-banner.hidden { display:none; }
+
+    /* ─── NAV ─── */
+    nav { position:fixed;top:0;left:0;right:0;z-index:999;height:72px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;transition:background .4s,backdrop-filter .4s; }
+    nav.scrolled { background:rgba(8,13,20,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border); }
+    .nav-logo img { height:44px;display:block; }
+    .nav-links { display:flex;align-items:center;gap:36px;list-style:none; }
+    .nav-links a { color:rgba(255,255,255,.7);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.04em;transition:color .2s; }
+    .nav-links a:hover,.nav-links a.active { color:#fff; }
+    .nav-cta { background:var(--red)!important;color:#fff!important;padding:10px 22px;border-radius:3px;font-weight:600!important; }
+    .nav-cta:hover { background:var(--red2)!important; }
+    .burger { display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:1001; }
+    .burger span { display:block;width:22px;height:1.5px;background:#fff;transition:.3s; }
+    .mob { display:none;position:fixed;top:72px;left:0;right:0;z-index:998;background:rgba(8,13,20,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:28px 32px 36px;flex-direction:column;gap:18px; }
+    .mob.open { display:flex; }
+    .mob a { color:rgba(255,255,255,.75);text-decoration:none;font-size:.95rem;padding:10px 0;border-bottom:1px solid var(--border); }
+    .mob .nav-cta { text-align:center;padding:14px;border-radius:3px;border-bottom:none;margin-top:6px; }
+
+    /* ─── HERO ─── */
+    .hero { position:relative;height:100vh;min-height:680px;display:flex;align-items:center;overflow:hidden; }
+    .hero-bg { position:absolute;inset:0;z-index:0;overflow:hidden; }
+    .hero-slide { position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(.95) brightness(.72) contrast(1.03);opacity:0;animation:heroFade 21s infinite;will-change:opacity,transform; }
+    .hero-slide:nth-child(1){animation-delay:0s;} .hero-slide:nth-child(2){animation-delay:7s;} .hero-slide:nth-child(3){animation-delay:14s;}
+    @keyframes heroFade { 0%{opacity:0;transform:scale(1.04);} 4%{opacity:1;} 28%{opacity:1;transform:scale(1.12);} 33%{opacity:0;} 100%{opacity:0;} }
+    @media (prefers-reduced-motion:reduce){ .hero-slide{animation:none;} .hero-slide:nth-child(1){opacity:1;} }
+    .hero-overlay { position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(8,13,20,.7) 0%,rgba(8,13,20,.22) 55%,transparent 100%),linear-gradient(to top,rgba(8,13,20,.5) 0%,transparent 48%); }
+    .hero-overlay::after { content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");pointer-events:none; }
+    .hero-content { position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 56px;width:100%; }
+    .hero-tag { display:inline-flex;align-items:center;gap:10px;color:rgba(255,255,255,.5);font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:24px; }
+    .hero-tag::before { content:'';display:block;width:28px;height:1px;background:var(--red); }
+    h1.hero-title { font-family:var(--serif);font-size:clamp(3.2rem,7vw,6.5rem);font-weight:900;color:#fff;line-height:1.03;letter-spacing:-.025em;margin-bottom:24px;max-width:680px; }
+    h1.hero-title .acc { color:var(--gold); }
+    .hero-sub { font-size:clamp(.95rem,1.5vw,1.15rem);color:rgba(255,255,255,.6);font-weight:300;line-height:1.7;max-width:480px;margin-bottom:48px; }
+    .hero-btns { display:flex;flex-wrap:wrap;gap:14px;margin-bottom:72px; }
+    .btn-p { display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;padding:15px 34px;border-radius:3px;font-size:.9rem;font-weight:600;text-decoration:none;letter-spacing:.03em;transition:background .2s,transform .2s;box-shadow:0 4px 24px rgba(212,46,34,.35); }
+    .btn-p:hover { background:var(--red2);transform:translateY(-1px); }
+    .btn-p:active { transform:translateY(1px) scale(.985);box-shadow:0 2px 12px rgba(212,46,34,.3); }
+    .btn-s { display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.8);padding:15px 34px;border-radius:3px;border:1px solid rgba(255,255,255,.22);font-size:.9rem;font-weight:500;text-decoration:none;transition:border-color .2s,color .2s,transform .2s; }
+    .btn-s:hover { border-color:rgba(255,255,255,.5);color:#fff;transform:translateY(-1px); }
+    .btn-s:active { transform:translateY(1px) scale(.985); }
+    .hero-stats { display:flex;flex-wrap:wrap;gap:0;padding-top:36px;border-top:1px solid rgba(255,255,255,.1); }
+    .hs { padding:0 48px 0 0; }
+    .hs-n { font-family:var(--serif);font-size:2.4rem;font-weight:700;color:#fff;line-height:1;margin-bottom:4px; }
+    .hs-n em { color:var(--gold);font-style:normal; }
+    .hs-l { font-size:.72rem;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase; }
+    .scroll-hint { position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.25);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase; }
+    .scroll-line { width:1px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,.3),transparent);animation:pulse 2s ease-in-out infinite; }
+    @keyframes pulse{0%,100%{opacity:.3}50%{opacity:.8}}
+
+    /* ─── TICKER ─── */
+    .ticker { background:var(--navy);overflow:hidden; }
+    .ticker-inner { display:flex;animation:tick 24s linear infinite;white-space:nowrap; }
+    .ticker-inner:hover { animation-play-state:paused; }
+    .ti { display:flex;align-items:center;gap:10px;padding:15px 40px;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.8);letter-spacing:.1em;text-transform:uppercase;flex-shrink:0; }
+    .td { width:3px;height:3px;background:var(--gold);border-radius:50%;flex-shrink:0; }
+    @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* ─── SECTIONS ─── */
+    section { position:relative; }
+    .inner { max-width:1200px;margin:0 auto;padding:100px 56px; }
+    .stag { display:inline-flex;align-items:center;gap:8px;color:var(--red);font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px; }
+    .stag::before { content:'';display:block;width:22px;height:1px;background:var(--red); }
+    .sh { font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:900;line-height:1.1;letter-spacing:-.02em;margin-bottom:14px; }
+    .ss { font-size:1rem;color:#777;font-weight:300;line-height:1.75;max-width:520px; }
+
+    /* ─── LEISTUNGEN ─── */
+    .leistungen { background:var(--light); }
+    .lh { display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:52px; }
+    .sg { display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px; }
+    .sc { background:#fff;padding:36px 32px;position:relative;overflow:hidden;transition:background .3s,transform .25s; }
+    .sc::after { content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--red);transition:width .4s ease; }
+    .sc:hover { background:var(--navy);transform:translateY(-2px); }
+    .sc:hover::after { width:100%; }
+    .sc:hover .sct,.sc:hover .sci-lbl { color:#fff; }
+    .sc:hover .scd { color:rgba(255,255,255,.45); }
+    .sc:hover .sci { background:rgba(244,194,0,.12);color:var(--gold); }
+    .sci { width:48px;height:48px;background:rgba(212,46,34,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--red);transition:background .3s,color .3s; } .sci svg { width:25px;height:25px; }
+    .sct { font-family:var(--serif);font-size:1.15rem;font-weight:700;margin-bottom:8px;transition:color .3s; }
+    .scd { font-size:.84rem;color:#777;line-height:1.65;transition:color .3s; }
+
+    /* ─── ÜBER UNS ─── */
+    .ueber { background:#fff; }
+    .ug { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center; }
+    .ui { position:relative; }
+    .ui-img { width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:3px;display:block;filter:saturate(.92); }
+    .ui-badge { position:absolute;bottom:-24px;right:-20px;background:var(--red);color:#fff;padding:20px 26px;border-radius:3px;box-shadow:0 8px 32px rgba(212,46,34,.35); }
+    .ui-badge-n { font-family:var(--serif);font-size:2.2rem;font-weight:900;line-height:1; }
+    .ui-badge-l { font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-top:3px; }
+    .ub { font-size:.95rem;color:#666;line-height:1.8;margin-bottom:20px; }
+    .uf { display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px; }
+    .ufi { padding:18px;background:var(--light);border-radius:4px;border:1px solid rgba(212,46,34,.18); }
+    .ufi-v { font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--navy); }
+    .ufi-l { font-size:.75rem;color:#999;margin-top:2px; }
+    .team-cards { display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px; }
+    .tc { display:flex;gap:14px;align-items:center;background:var(--light);border-radius:4px;padding:14px;border:1px solid rgba(29,48,96,.16); }
+    .tc-photo { width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0;filter:saturate(.9); }
+    .tc-name { font-weight:700;font-size:.9rem;color:var(--navy); }
+    .tc-role { font-size:.75rem;color:var(--gray);margin-top:2px; }
+    .zbadges { display:flex;flex-wrap:wrap;gap:8px;margin-top:28px; }
+    .zb { display:inline-flex;align-items:center;gap:5px;background:rgba(29,48,96,.06);border:1px solid rgba(29,48,96,.18);color:var(--navy);padding:5px 12px;border-radius:100px;font-size:.75rem;font-weight:600; }
+
+    /* ─── SHOWREEL ─── */
+    .showreel { position:relative;overflow:hidden;height:580px;display:flex;align-items:center;justify-content:center; }
+    .sr-video { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.38) saturate(.7); }
+    .sr-overlay { position:absolute;inset:0;background:linear-gradient(135deg,rgba(29,48,96,.35) 0%,rgba(8,13,20,.6) 100%); }
+    .sr-content { position:relative;z-index:2;text-align:center;padding:0 56px; }
+    .sr-tag { display:inline-flex;align-items:center;gap:12px;color:rgba(255,255,255,.5);font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:20px; }
+    .sr-tag::before,.sr-tag::after { content:'';display:block;width:32px;height:1px;background:rgba(255,255,255,.3); }
+    .sr-title { font-family:var(--serif);font-size:clamp(2rem,5vw,4rem);font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1.1;margin-bottom:20px; }
+    .sr-title em { font-style:italic;color:var(--gold); }
+    .sr-sub { font-size:1rem;color:rgba(255,255,255,.55);font-weight:300;max-width:520px;margin:0 auto 36px;line-height:1.7; }
+
+    /* ─── REFERENZEN ─── */
+    .referenzen { background:linear-gradient(180deg,var(--mid),var(--dark)); }
+    .referenzen .sh { color:#fff; }
+    .referenzen .ss { color:rgba(255,255,255,.4); }
+    .rh { display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:48px; }
+    .rg { display:grid;grid-template-columns:repeat(3,1fr);gap:3px; }
+    .rc { position:relative;overflow:hidden;cursor:default; }
+    .rc-img { width:100%;height:100%;object-fit:cover;display:block;min-height:240px;transition:transform .6s ease,filter .4s;filter:brightness(.85) saturate(.9); }
+    .rc:hover .rc-img { transform:scale(1.06);filter:brightness(.95) saturate(1.05); }
+    .rc.big { grid-column:span 2; }
+    .rc.big .rc-img { min-height:480px; }
+    .rc-ov { position:absolute;inset:0;background:linear-gradient(to top,rgba(8,13,20,.88) 0%,transparent 55%);opacity:0;transition:opacity .35s;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:24px; }
+    .rc:hover .rc-ov { opacity:1; }
+    .rc-label { color:#fff;font-weight:600;font-size:.95rem; }
+    .rc-type { color:var(--gold);font-size:.75rem;margin-top:3px; }
+
+    /* ─── BEWERTUNGEN ─── */
+    .bewertungen { background:var(--white); }
+    .bh { display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:52px; }
+    .gscore { display:flex;align-items:center;gap:18px;padding:18px 24px;background:var(--light);border-radius:6px; }
+    .gs-n { font-family:var(--serif);font-size:2.8rem;font-weight:900;color:var(--navy); }
+    .gs-stars { color:#F5A623;font-size:1rem;letter-spacing:2px; }
+    .gs-c { font-size:.75rem;color:#999;margin-top:2px; }
+    .rg2 { display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px; }
+    .rv { background:#fff;border:1px solid #E8E8E8;border-radius:6px;padding:26px;transition:box-shadow .2s,transform .2s; }
+    .rv:hover { box-shadow:0 8px 28px rgba(0,0,0,.07);transform:translateY(-2px); }
+    .rvh { display:flex;align-items:center;gap:12px;margin-bottom:14px; }
+    .rva { width:40px;height:40px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:.9rem;flex-shrink:0; }
+    .rvn { font-weight:600;font-size:.875rem; }
+    .rvd { font-size:.72rem;color:#aaa;margin-top:1px; }
+    .rvs { color:#F5A623;font-size:.85rem;margin-bottom:8px;letter-spacing:1px; }
+    .rvt { font-size:.84rem;color:#666;line-height:1.65; }
+
+    /* ─── KONTAKT ─── */
+    .kontakt { background:linear-gradient(160deg,var(--navy) -10%,var(--mid) 45%,var(--dark) 100%); }
+    .kg { display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start; }
+    .kontakt .sh { color:#fff; }
+    .kontakt .ss { color:rgba(255,255,255,.4); }
+    .ki { display:flex;flex-direction:column;gap:28px;margin-top:44px; }
+    .kii { display:flex;gap:14px;align-items:flex-start; }
+    .kic { width:42px;height:42px;flex-shrink:0;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:1rem; }
+    .kil { font-size:.68rem;color:rgba(255,255,255,.3);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px; }
+    .kiv { color:rgba(255,255,255,.8);font-size:.9rem;text-decoration:none;transition:color .2s; }
+    .kiv:hover { color:var(--gold); }
+    .kiv-sm { font-size:.78rem;color:rgba(255,255,255,.35); }
+    .wa-btn { display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:13px 26px;border-radius:3px;font-weight:600;font-size:.875rem;text-decoration:none;margin-top:12px;transition:background .2s,transform .2s; }
+    .wa-btn:hover { background:#1eba57;transform:translateY(-1px); }
+    .kform { background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:6px;padding:40px; }
+    .kft { color:#fff;font-family:var(--serif);font-size:1.35rem;font-weight:700;margin-bottom:28px; }
+    .frow { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
+    .fg { display:flex;flex-direction:column;gap:7px;margin-bottom:14px; }
+    .fg label { font-size:.7rem;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.1em;text-transform:uppercase; }
+    .fg input,.fg select,.fg textarea { background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:3px;padding:11px 14px;color:rgba(255,255,255,.8);font-size:.875rem;font-family:var(--sans);outline:none;width:100%;transition:border-color .2s; }
+    .fg input::placeholder,.fg textarea::placeholder { color:rgba(255,255,255,.18); }
+    .fg input:focus,.fg select:focus,.fg textarea:focus { border-color:var(--gold); }
+    .fg select option { background:#1C1C1C; }
+    .fg textarea { resize:vertical;min-height:96px; }
+    .fsub { width:100%;background:var(--red);color:#fff;border:none;padding:15px;border-radius:3px;font-size:.9rem;font-weight:600;font-family:var(--sans);cursor:pointer;transition:background .2s;margin-top:6px;letter-spacing:.03em; }
+    .fsub:hover { background:var(--red2); }
+    .fnote { font-size:.7rem;color:rgba(255,255,255,.2);text-align:center;margin-top:10px; }
+
+    /* ─── FOOTER ─── */
+    footer { background:#030609;border-top:1px solid rgba(255,255,255,.04); }
+    .fm { max-width:1200px;margin:0 auto;padding:56px 56px 36px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:56px; }
+    .fl img { height:42px;display:block;margin-bottom:14px;filter:brightness(0) invert(.5); }
+    .ft { font-size:.8rem;color:rgba(255,255,255,.25);line-height:1.65;max-width:240px;margin-bottom:20px; }
+    .fsoc { display:flex;gap:8px; }
+    .fsl { width:34px;height:34px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:5px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.35);text-decoration:none;font-size:.8rem;transition:background .2s,color .2s,border-color .2s; }
+    .fsl:hover { background:var(--red);color:#fff;border-color:var(--red); }
+    .fct { font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:14px; }
+    .fcl { list-style:none;display:flex;flex-direction:column;gap:9px; }
+    .fcl a,.fcl button { color:rgba(255,255,255,.45);text-decoration:none;font-size:.84rem;transition:color .2s;background:none;border:none;cursor:pointer;font-family:var(--sans);padding:0;text-align:left; }
+    .fcl a:hover,.fcl button:hover { color:rgba(255,255,255,.8); }
+    .fb { max-width:1200px;margin:0 auto;padding:18px 56px;border-top:1px solid rgba(255,255,255,.04);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px; }
+    .fbc { font-size:.75rem;color:rgba(255,255,255,.18); }
+    .fbl { display:flex;gap:20px; }
+    .fbl button { font-size:.75rem;color:rgba(255,255,255,.18);background:none;border:none;cursor:pointer;font-family:var(--sans);transition:color .2s; }
+    .fbl button:hover { color:rgba(255,255,255,.45); }
+
+    /* ─── FLOAT WA ─── */
+    .wa-float { position:fixed;bottom:28px;right:28px;z-index:900;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s;text-decoration:none; }
+    .wa-float:hover { transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.55); }
+    .wa-float svg { width:26px;height:26px;fill:#fff; }
+    .wa-pulse { position:absolute;width:100%;height:100%;border-radius:50%;background:rgba(37,211,102,.4);animation:wapulse 2.5s ease-out infinite; }
+    @keyframes wapulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.8);opacity:0}}
+
+    /* ─── SLIDER (Impressum / Datenschutz) ─── */
+    .slider-overlay { display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1100;backdrop-filter:blur(4px); }
+    .slider-overlay.open { display:block; }
+    .slider-panel { position:fixed;top:0;right:0;width:min(640px,100%);height:100vh;background:var(--dark);z-index:1101;overflow-y:auto;transform:translateX(100%);transition:transform .38s cubic-bezier(.25,.46,.45,.94);border-left:1px solid rgba(255,255,255,.08); }
+    .slider-panel.open { transform:translateX(0); }
+    .slider-head { position:sticky;top:0;background:var(--dark);padding:20px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);z-index:1; }
+    .slider-head h2 { font-family:var(--serif);font-size:1.2rem;font-weight:700;color:#fff; }
+    .slider-close { background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;font-family:var(--sans); }
+    .slider-close:hover { background:var(--red);color:#fff;border-color:var(--red); }
+    .slider-body { padding:36px 32px; }
+    .slider-body h3 { font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin:28px 0 10px; }
+    .slider-body h3:first-child { margin-top:0; }
+    .slider-body p,.slider-body address { font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.8;font-style:normal; }
+    .slider-body a { color:var(--gold);text-decoration:none; }
+    .slider-body hr { border:none;border-top:1px solid rgba(255,255,255,.07);margin:24px 0; }
+    .slider-body ul { padding-left:18px;margin-top:8px; }
+    .slider-body li { font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:4px; }
+
+    /* ─── FADE-UP ─── */
+    .fu { opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease; }
+    .fu.vis { opacity:1;transform:translateY(0); }
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+    /* ─── SCROLL-ANIMATIONEN ─── */
+    .sr-video,.hero-video { will-change:transform; }
+    .hero-content { will-change:transform,opacity; }
+
+    /* Sticky-Bild-Zoom */
+    .zoomshow { background:var(--black); }
+    .zs-track { height:200vh;position:relative; }
+    .zs-sticky { position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden; }
+    .zs-img { width:min(86vw,1100px);aspect-ratio:16/9;object-fit:cover;border-radius:48px;will-change:transform,border-radius;filter:brightness(.78) saturate(.95);box-shadow:0 50px 120px -40px rgba(0,0,0,.85); }
+    .zs-cap { position:absolute;z-index:2;text-align:center;color:#fff;padding:0 24px;pointer-events:none; }
+    .zs-cap h2 { font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,3.4rem);font-weight:900;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.65);margin-top:6px; }
+
+    /* Headline Word-Reveal */
+    .wr { display:inline-block;opacity:0;transform:translateY(.5em);filter:blur(6px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1),filter .6s; }
+    .wr-go .wr { opacity:1;transform:none;filter:none; }
+
+    /* ─── REDUCED MOTION ─── */
+    @media (prefers-reduced-motion: reduce){
+      .fu { opacity:1!important;transform:none!important;transition:none; }
+      .wr { opacity:1!important;transform:none!important;filter:none!important; }
+      .ticker-inner,.scroll-line,.wa-pulse { animation:none!important; }
+      .zs-track { height:auto; } .zs-sticky { position:static;height:auto;padding:80px 0; }
+      html { scroll-behavior:auto; }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:960px){
+      nav,.mob{padding-left:24px;padding-right:24px}
+      #cookie-banner{padding-left:24px;padding-right:24px}
+      .nav-links{display:none}.burger{display:flex}
+      .hero-content{padding:0 24px}.hero-stats{display:none}
+      .inner{padding:72px 24px}
+      .ug{grid-template-columns:1fr;gap:48px}.ui-badge{right:0}
+      .rg{grid-template-columns:1fr 1fr}.rc.big{grid-column:span 2}
+      .kg{grid-template-columns:1fr;gap:48px}
+      .frow{grid-template-columns:1fr}
+      .fm{grid-template-columns:1fr;gap:32px;padding:40px 24px 24px}
+      .fb{padding:16px 24px}
+      .sr-content{padding:0 24px}
+      .team-cards{grid-template-columns:1fr}
+    }
+    @media(max-width:600px){
+      h1.hero-title{font-size:2.8rem}
+      .hero-btns{flex-direction:column}.btn-p,.btn-s{justify-content:center}
+      .sg{grid-template-columns:1fr}
+      .rg{grid-template-columns:1fr}.rc.big{grid-column:span 1}.rc.big .rc-img{min-height:280px}
+      .rg2{grid-template-columns:1fr}.uf{grid-template-columns:1fr}
+      .kform{padding:24px 18px}.fb{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+<!-- COOKIE -->
+<div id="cookie-banner">
+  <p>Diese Website verwendet Cookies. Optionale Dienste werden erst nach Ihrer Zustimmung geladen. <button onclick="openSlider('dsgvo')" style="background:none;border:none;color:var(--gold);cursor:pointer;font-size:inherit;padding:0;font-family:var(--sans);">Datenschutz lesen</button></p>
+  <div class="cb-btns">
+    <button class="cb-decline" onclick="cookieDecline()">Nur notwendige</button>
+    <button class="cb-accept" onclick="cookieAccept()">Alle akzeptieren</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><img src="assets/img/scholz_logo_skaliert.png" alt="Malerfachbetrieb Sören Scholz"></a>
+  <ul class="nav-links">
+    <li><a href="leistungen.html">Leistungen</a></li>
+    <li><a href="#ueber">Über uns</a></li>
+    <li><a href="referenzen.html">Referenzen</a></li>
+    <li><a href="#bewertungen">Bewertungen</a></li>
+    <li><a href="jobs.html">Jobs</a></li>
+    <li><a href="#kontakt" class="nav-cta">Anfragen</a></li>
+  </ul>
+  <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mob" id="mob">
+  <a href="leistungen.html" onclick="closeMob()">Leistungen</a>
+  <a href="#ueber" onclick="closeMob()">Über uns</a>
+  <a href="referenzen.html" onclick="closeMob()">Referenzen</a>
+  <a href="#bewertungen" onclick="closeMob()">Bewertungen</a>
+  <a href="jobs.html" onclick="closeMob()">Jobs</a>
+  <a href="#kontakt" class="nav-cta" onclick="closeMob()">Kostenlos anfragen</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-slide" style="background-image:url('assets/img/Betonoptik_5798_original.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/Fassadenmalerei_5062_original.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/Innenraumgestaltung_Malerarbeiten_4978_original.jpg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Malerfachbetrieb · Crimmitschau & Region</div>
+    <h1 class="hero-title">Ihr Raum.<br>Neu <span class="acc">gemacht.</span></h1>
+    <p class="hero-sub">Vom ersten Pinselstrich bis zur makellosen Übergabe — Handwerk mit Anspruch. Seit 2011 für Privat- und Gewerbekunden in der Region Zwickau.</p>
+    <div class="hero-btns">
+      <a href="#kontakt" class="btn-p">Kostenlos anfragen →</a>
+      <a href="referenzen.html" class="btn-s">Referenzen ansehen</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-n">15<em>+</em></div><div class="hs-l">Jahre Erfahrung</div></div>
+      <div class="hs"><div class="hs-n">12</div><div class="hs-l">Fachleute im Team</div></div>
+      <div class="hs"><div class="hs-n">500<em>+</em></div><div class="hs-l">Projekte</div></div>
+      <div class="hs"><div class="hs-n">8</div><div class="hs-l">Leistungsbereiche</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ti">Malerarbeiten<span class="td"></span></span><span class="ti">Wandgestaltung<span class="td"></span></span><span class="ti">Bodenverlegung<span class="td"></span></span><span class="ti">Fassadenanstrich<span class="td"></span></span><span class="ti">Trockenbau<span class="td"></span></span><span class="ti">Lackierarbeiten<span class="td"></span></span><span class="ti">Bootslackierung<span class="td"></span></span><span class="ti">Schadensanierung<span class="td"></span></span><span class="ti">Crimmitschau · Zwickau · Werdau · Glauchau<span class="td"></span></span>
+    <span class="ti">Malerarbeiten<span class="td"></span></span><span class="ti">Wandgestaltung<span class="td"></span></span><span class="ti">Bodenverlegung<span class="td"></span></span><span class="ti">Fassadenanstrich<span class="td"></span></span><span class="ti">Trockenbau<span class="td"></span></span><span class="ti">Lackierarbeiten<span class="td"></span></span><span class="ti">Bootslackierung<span class="td"></span></span><span class="ti">Schadensanierung<span class="td"></span></span><span class="ti">Crimmitschau · Zwickau · Werdau · Glauchau<span class="td"></span></span>
+  </div>
+</div>
+
+<!-- LEISTUNGEN -->
+<section class="leistungen" id="leistungen">
+  <div class="inner">
+    <div class="lh">
+      <div class="fu"><div class="stag">Was wir tun</div><h2 class="sh">Unsere Leistungen</h2><p class="ss">Das komplette Handwerksspektrum aus einer Hand — ohne Koordinationsaufwand für Sie.</p></div>
+      <a href="leistungen.html" class="btn-p fu d2">Alle Leistungen →</a>
+    </div>
+    <div class="sg">
+      <div class="sc fu d1"><div class="sci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="12" height="6" rx="1.5"/><path d="M15 7h3.5a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 18.5 11H12v3"/><rect x="9.5" y="14" width="3" height="6" rx="1"/></svg></div><div class="sct">Maler- & Tapezierarbeiten</div><p class="scd">Innen und Außen, alle Untergründe. Sauber, termingerecht, ohne versteckte Kosten.</p></div>
+      <div class="sc fu d2"><div class="sci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.7 4.8L18.5 9.5 13.7 11.2 12 16l-1.7-4.8L5.5 9.5l4.8-1.7z"/><path d="M18 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg></div><div class="sct">Wandgestaltung</div><p class="scd">Betonoptik, Mooswände, Reliefs, Effektbeschichtungen, fugenlose Bäder.</p></div>
+      <div class="sc fu d3"><div class="sci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="3.4" rx="1"/><rect x="3" y="10.3" width="18" height="3.4" rx="1"/><rect x="3" y="15.6" width="18" height="3.4" rx="1"/></svg></div><div class="sct">Bodenverlegung</div><p class="scd">Parkett, Laminat, Vinyl, Epoxidharz. Untergrundvorbereitung inklusive.</p></div>
+      <div class="sc fu d4"><div class="sci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6 8 6"/><path d="M6 9.8V19h12V9.8"/><path d="M10.5 19v-4.5h3V19"/></svg></div><div class="sct">Fassadenanstriche</div><p class="scd">Schutz und Optik für die Außenhülle. Putz, WDVS, Farbgestaltung aus einer Hand.</p></div>
+      <div class="sc fu d1"><div class="sci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h6v4H3zM10 6h11v4H10M3 14h11v4H3M15 14h6v4h-6M9 10v4M14 10v4"/></svg></div><div class="sct">Trockenbau</div><p class="scd">Wand- und Deckenverkleidungen, Akustikdecken, Dämmung und Innenausbau.</p></div>
+      <div class="sc fu d2"><div class="sci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5l6 6-2.5 2.5-6-6z"/><path d="M11.6 6.4l-6 6c-1.4 1.4-1.9 3.8-1.9 6.6 2.8 0 5.2-.5 6.6-1.9l6-6"/></svg></div><div class="sct">Lackierarbeiten</div><p class="scd">Türen, Fenster, Geländer, Möbel, Industrieobjekte — auch Bootslackierung.</p></div>
+      <div class="sc fu d3"><div class="sci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16h16l-2.2 4H6.2z"/><path d="M12 16V3l7 9z"/></svg></div><div class="sct">Bootslackierung</div><p class="scd">Speziallackierung von Booten und historischen Fahrzeugen. Eine unserer Besonderheiten.</p></div>
+      <div class="sc fu d4"><div class="sci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3.2V11c0 4.7-3.2 8-7.5 9.5C7.7 19 4.5 15.7 4.5 11V6.2z"/><path d="M12 8.5v3.5"/><path d="M12 15.2v.1"/></svg></div><div class="sct">Schadensanierung</div><p class="scd">Brand- und Wasserschäden versicherungskonform, dokumentiert und schnell behoben.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER UNS -->
+<section class="ueber" id="ueber">
+  <div class="inner">
+    <div class="ug">
+      <div class="ui fu">
+        <img class="ui-img" src="assets/img/Sören_Scholz_4972_original.jpg" alt="Sören Scholz, Inhaber">
+        <div class="ui-badge"><div class="ui-badge-n">15</div><div class="ui-badge-l">Jahre<br>Erfahrung</div></div>
+      </div>
+      <div class="fu d2">
+        <div class="stag">Wer wir sind</div>
+        <h2 class="sh">Herz.<br>Leidenschaft.<br>Fachexpertise.</h2>
+        <p class="ub">Am 1. März 2011 gründete Sören Scholz seinen Malerfachbetrieb in Crimmitschau — mit 12 Jahren Berufserfahrung und dem Anspruch, Handwerk auf ein neues Niveau zu heben.</p>
+        <p class="ub">Heute arbeiten 12 Fachleute Hand in Hand. Kein Projekt wird weitergereicht. Sie haben einen direkten Ansprechpartner — von der ersten Besichtigung bis zur Abnahme.</p>
+        <div class="uf">
+          <div class="ufi"><div class="ufi-v">12</div><div class="ufi-l">Mitarbeiter im Team</div></div>
+          <div class="ufi"><div class="ufi-v">500+</div><div class="ufi-l">Projekte umgesetzt</div></div>
+          <div class="ufi"><div class="ufi-v">100%</div><div class="ufi-l">Zuverlässigkeit</div></div>
+          <div class="ufi"><div class="ufi-v">1</div><div class="ufi-l">Ansprechpartner</div></div>
+        </div>
+        <div class="team-cards">
+          <div class="tc"><img class="tc-photo" src="assets/img/Sören_Scholz_4972_original.jpg" alt="Sören Scholz"><div><div class="tc-name">Sören Scholz</div><div class="tc-role">Inhaber & Meister</div></div></div>
+          <div class="tc"><img class="tc-photo" src="assets/img/André_Ledermann_4973_original.jpg" alt="André Ledermann"><div><div class="tc-name">André Ledermann</div><div class="tc-role">Projektleitung</div></div></div>
+        </div>
+        <div class="zbadges">
+          <span class="zb">✓ Fassadenanstriche</span>
+          <span class="zb">✓ Bodenverlegung</span>
+          <span class="zb">✓ Wandgestaltung</span>
+          <span class="zb">✓ Bootslackierung</span>
+          <span class="zb">✓ Schadensanierung</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWREEL -->
+<section class="showreel">
+  <video class="sr-video" autoplay muted loop playsinline>
+    <source src="https://assets.mixkit.co/videos/21219/21219-720.mp4" type="video/mp4">
+    <source src="https://assets.mixkit.co/videos/41178/41178-1080.mp4" type="video/mp4">
+  </video>
+  <div class="sr-overlay"></div>
+  <div class="sr-content fu">
+    <div class="sr-tag">Unser Versprechen</div>
+    <h2 class="sr-title">Sauber. Pünktlich.<br><em>Verlässlich.</em></h2>
+    <p class="sr-sub">Was versprochen wird, wird gehalten. Von der ersten Besichtigung bis zur gemeinsamen Abnahme — Sie wissen immer, was auf Ihrer Baustelle passiert.</p>
+    <a href="#kontakt" class="btn-p">Jetzt kostenloses Angebot anfragen →</a>
+  </div>
+</section>
+
+<!-- STICKY-BILD-ZOOM -->
+<section class="zoomshow">
+  <div class="zs-track" id="zsTrack">
+    <div class="zs-sticky">
+      <img class="zs-img" id="zsImg" src="assets/img/Betonoptik_5798_original.jpg" alt="Betonoptik-Wandgestaltung im Detail" loading="lazy">
+      <div class="zs-cap">
+        <div class="stag" style="color:var(--gold);justify-content:center">Unsere Handschrift</div>
+        <h2>Oberflächen, die man<br>anfassen will.</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENZEN (Preview) -->
+<section class="referenzen" id="referenzen">
+  <div class="inner">
+    <div class="rh">
+      <div class="fu"><div class="stag" style="color:rgba(255,255,255,.4)">Abgeschlossene Projekte</div><h2 class="sh">Unsere Referenzen</h2><p class="ss">Ein Auszug — alle Projekte auf der Referenzseite.</p></div>
+      <a href="referenzen.html" class="btn-s fu d2">Alle Referenzen →</a>
+    </div>
+    <div class="rg">
+      <div class="rc big fu"><img class="rc-img" src="assets/img/Schallreduzierung_im_Innenraum_mit_Moos_4976_original.jpg" alt="Mooswand" loading="lazy"><div class="rc-ov"><div class="rc-label">Mooswand & Akustik</div><div class="rc-type">Wandgestaltung</div></div></div>
+      <div class="rc fu d1"><img class="rc-img" src="assets/img/Betonoptik_5796_original.jpg" alt="Betonoptik" loading="lazy"><div class="rc-ov"><div class="rc-label">Betonoptik</div><div class="rc-type">Wandgestaltung</div></div></div>
+      <div class="rc fu d2"><img class="rc-img" src="assets/img/Detailbild_Parkett_5054_original.jpg" alt="Parkett" loading="lazy"><div class="rc-ov"><div class="rc-label">Parkettverlegung</div><div class="rc-type">Bodenverlegung</div></div></div>
+      <div class="rc fu d2"><img class="rc-img" src="assets/img/Kutsche_Lackierung_4965_original.jpg" alt="Kutsche" loading="lazy"><div class="rc-ov"><div class="rc-label">Kutschenlackierung</div><div class="rc-type">Lackierung</div></div></div>
+      <div class="rc big fu d3"><img class="rc-img" src="assets/img/Betonoptik_5798_original.jpg" alt="Betonoptik" loading="lazy"><div class="rc-ov"><div class="rc-label">Betonoptik Detail</div><div class="rc-type">Wandgestaltung</div></div></div>
+      <div class="rc fu d1"><img class="rc-img" src="assets/img/Hausfassade_5061_original.jpg" alt="Fassade" loading="lazy"><div class="rc-ov"><div class="rc-label">Fassadenarbeiten</div><div class="rc-type">Fassade</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEWERTUNGEN -->
+<section class="bewertungen" id="bewertungen">
+  <div class="inner">
+    <div class="bh">
+      <div class="fu"><div class="stag">Was Kunden sagen</div><h2 class="sh">Bewertungen</h2><p class="ss">Echte Rückmeldungen aus der Region — Crimmitschau, Zwickau, Werdau und Umgebung.</p></div>
+      <div class="gscore fu d2"><div><div class="gs-n">4.9</div><div class="gs-stars">★★★★★</div><div class="gs-c">Google Bewertung</div></div></div>
+    </div>
+    <div class="rg2">
+      <div class="rv fu d1"><div class="rvh"><div class="rva">MH</div><div><div class="rvn">Markus H.</div><div class="rvd">vor 2 Monaten · Zwickau</div></div></div><div class="rvs">★★★★★</div><p class="rvt">Unser Wohnzimmer wurde in Betonoptik gestaltet — absolutes Highlight. Die Ausführung war makellos und der Termin wurde exakt eingehalten. Klare Weiterempfehlung!</p></div>
+      <div class="rv fu d2"><div class="rvh"><div class="rva">SK</div><div><div class="rvn">Sandra K.</div><div class="rvd">vor 3 Monaten · Crimmitschau</div></div></div><div class="rvs">★★★★★</div><p class="rvt">Komplette Renovierung nach Wasserschaden — das Team war schnell, sauber und hat alles versicherungskonform dokumentiert. Sehr professionell und freundlich.</p></div>
+      <div class="rv fu d3"><div class="rvh"><div class="rva">TB</div><div><div class="rvn">Thomas B.</div><div class="rvd">vor 5 Monaten · Werdau</div></div></div><div class="rvs">★★★★★</div><p class="rvt">Parkett verlegen lassen — top Ergebnis. Untergrund wurde ordentlich vorbereitet, alles passt perfekt. André war immer erreichbar und hat alle Fragen beantwortet.</p></div>
+      <div class="rv fu d4"><div class="rvh"><div class="rva">AL</div><div><div class="rvn">Andrea L.</div><div class="rvd">vor 1 Monat · Glauchau</div></div></div><div class="rvs">★★★★★</div><p class="rvt">Fassade neu gestrichen und zwei Zimmer tapeziert. Pünktlich, sauber, kein Stress. Werde den Betrieb bei jedem Bedarf wieder beauftragen. Sehr zu empfehlen!</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="kontakt" id="kontakt">
+  <div class="inner">
+    <div class="kg">
+      <div class="fu">
+        <div class="stag" style="color:rgba(255,255,255,.3)">Kostenlos & unverbindlich</div>
+        <h2 class="sh">Angebot anfragen.</h2>
+        <p class="ss">Wir melden uns innerhalb eines Werktages. Kostenlose Vor-Ort-Besichtigung und transparente Kalkulation inklusive.</p>
+        <div class="ki">
+          <div class="kii"><div class="kic">📞</div><div><div class="kil">Telefon</div><a class="kiv" href="tel:+491629793638">0162 9793638</a><div class="kiv-sm">Mo–Do 7:30–17:30 · Fr 7:30–13:00</div></div></div>
+          <div class="kii"><div class="kic">✉️</div><div><div class="kil">E-Mail</div><a class="kiv" href="mailto:buero@scholzmaler.de">buero@scholzmaler.de</a><div class="kiv-sm">Antwort innerhalb 24h</div></div></div>
+          <div class="kii"><div class="kic">📍</div><div><div class="kil">Adresse</div><a class="kiv" href="https://maps.google.com/?q=Neurmarkt+9+Crimmitschau" target="_blank" rel="noopener">Neurmarkt 9 · 08451 Crimmitschau</a></div></div>
+        </div>
+        <a href="https://wa.me/491629793638" target="_blank" rel="noopener" class="wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp schreiben
+        </a>
+      </div>
+      <div class="kform fu d2">
+        <div class="kft">Kostenlose Anfrage stellen</div>
+        <form id="cform" action="https://formspree.io/f/mlgpooqw" method="POST">
+          <div class="frow"><div class="fg"><label>Vorname *</label><input type="text" name="vorname" placeholder="Max" required></div><div class="fg"><label>Nachname *</label><input type="text" name="nachname" placeholder="Mustermann" required></div></div>
+          <div class="frow"><div class="fg"><label>Telefon</label><input type="tel" name="telefon" placeholder="0162 …"></div><div class="fg"><label>E-Mail *</label><input type="email" name="email" placeholder="ihre@email.de" required></div></div>
+          <div class="fg"><label>Leistung</label><select name="leistung"><option>Malerarbeiten / Tapezieren</option><option>Wandgestaltung</option><option>Bodenverlegung</option><option>Fassadenanstrich</option><option>Trockenbau</option><option>Lackierarbeiten</option><option>Bootslackierung</option><option>Schadensanierung</option><option>Sonstiges</option></select></div>
+          <div class="fg"><label>Ihre Nachricht *</label><textarea name="nachricht" placeholder="Kurze Beschreibung Ihres Vorhabens..." required></textarea></div>
+          <button type="submit" class="fsub">Anfrage absenden →</button>
+          <p class="fnote">Kostenlos · Unverbindlich · Antwort innerhalb 24h</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fm">
+    <div>
+      <div class="fl"><img src="assets/img/scholz_logo_skaliert.png" alt="Scholz Maler"></div>
+      <p class="ft">Malerfachbetrieb Sören Scholz · Neurmarkt 9 · 08451 Crimmitschau. Malerarbeiten, Wandgestaltung, Bodenverlegung und mehr — seit 2011 für die Region.</p>
+      <div class="fsoc">
+        <a class="fsl" href="https://instagram.com/malerfachbetriebsoren" target="_blank" rel="noopener" title="Instagram">IG</a>
+        <a class="fsl" href="https://wa.me/491629793638" target="_blank" rel="noopener" title="WhatsApp">WA</a>
+      </div>
+    </div>
+    <div>
+      <div class="fct">Leistungen</div>
+      <ul class="fcl">
+        <li><a href="leistungen.html">Malerarbeiten</a></li>
+        <li><a href="leistungen.html">Wandgestaltung</a></li>
+        <li><a href="leistungen.html">Bodenverlegung</a></li>
+        <li><a href="leistungen.html">Fassadenanstriche</a></li>
+        <li><a href="leistungen.html">Bootslackierung</a></li>
+        <li><a href="jobs.html">Jobs & Ausbildung</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fct">Kontakt & Rechtliches</div>
+      <ul class="fcl">
+        <li><a href="tel:+491629793638">0162 9793638</a></li>
+        <li><a href="mailto:buero@scholzmaler.de">buero@scholzmaler.de</a></li>
+        <li><button onclick="openSlider('imp')">Impressum</button></li>
+        <li><button onclick="openSlider('dsgvo')">Datenschutz</button></li>
+        <li><a href="referenzen.html">Referenzen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb">
+    <span class="fbc">© <span id="yr">2026</span> Malerfachbetrieb Sören Scholz · Einzelunternehmen · Crimmitschau</span>
+    <div class="fbl">
+      <button onclick="openSlider('imp')">Impressum</button>
+      <button onclick="openSlider('dsgvo')">Datenschutz</button>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a class="wa-float" href="https://wa.me/491629793638" target="_blank" rel="noopener" title="WhatsApp">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- ─── IMPRESSUM SLIDER ─── -->
+<div class="slider-overlay" id="imp-overlay" onclick="closeSlider('imp')"></div>
+<div class="slider-panel" id="imp-panel">
+  <div class="slider-head">
+    <h2>Impressum</h2>
+    <button class="slider-close" onclick="closeSlider('imp')">✕</button>
+  </div>
+  <div class="slider-body">
+    <h3>Angaben gemäß § 5 TMG</h3>
+    <address>
+      Malerfachbetrieb Sören Scholz<br>
+      Einzelunternehmen<br>
+      Neurmarkt 9<br>
+      08451 Crimmitschau<br>
+      Deutschland
+    </address>
+    <h3>Kontakt</h3>
+    <p>Telefon: <a href="tel:+491629793638">0162 9793638</a><br>
+    E-Mail: <a href="mailto:buero@scholzmaler.de">buero@scholzmaler.de</a></p>
+    <h3>Umsatzsteuer-ID</h3>
+    <p>USt-ID gemäß § 27a UStG: DE276176505</p>
+    <hr>
+    <h3>Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)</h3>
+    <p>Sören Scholz, Neurmarkt 9, 08451 Crimmitschau</p>
+    <hr>
+    <h3>Streitschlichtung</h3>
+    <p>Die EU-Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a><br>
+    Wir sind nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+    <hr>
+    <h3>Haftung für Inhalte</h3>
+    <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8–10 TMG sind wir nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
+  </div>
+</div>
+
+<!-- ─── DATENSCHUTZ SLIDER ─── -->
+<div class="slider-overlay" id="dsgvo-overlay" onclick="closeSlider('dsgvo')"></div>
+<div class="slider-panel" id="dsgvo-panel">
+  <div class="slider-head">
+    <h2>Datenschutzerklärung</h2>
+    <button class="slider-close" onclick="closeSlider('dsgvo')">✕</button>
+  </div>
+  <div class="slider-body">
+    <h3>Verantwortlicher</h3>
+    <p>Sören Scholz · Neurmarkt 9 · 08451 Crimmitschau<br>
+    Tel: <a href="tel:+491629793638">0162 9793638</a> · <a href="mailto:buero@scholzmaler.de">buero@scholzmaler.de</a></p>
+    <h3>Datenerfassung</h3>
+    <p>Beim Besuch dieser Website werden technische Daten (IP-Adresse, Browser, Uhrzeit) automatisch erfasst. Diese dienen ausschließlich dem technischen Betrieb und werden nicht an Dritte weitergegeben.</p>
+    <h3>Kontaktformular</h3>
+    <p>Daten aus dem Kontaktformular werden über <strong>Formspree, Inc.</strong> verarbeitet und ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Datenschutzerklärung Formspree: <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">formspree.io/legal/privacy-policy</a></p>
+    <h3>Cookies</h3>
+    <p>Wir setzen ausschließlich technisch notwendige Cookies ein. Optionale Dienste (Google Maps) werden nur nach Ihrer Einwilligung geladen. Sie können Cookies jederzeit in Ihrem Browser löschen.</p>
+    <h3>Google Maps</h3>
+    <p>Google Maps wird erst nach Ihrer Einwilligung aktiviert. Anbieter: Google Ireland Limited, Gordon House, Dublin 4, Irland. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO.</p>
+    <hr>
+    <h3>Ihre Rechte (DSGVO)</h3>
+    <ul>
+      <li>Auskunft über gespeicherte Daten (Art. 15)</li>
+      <li>Berichtigung oder Löschung (Art. 16, 17)</li>
+      <li>Einschränkung der Verarbeitung (Art. 18)</li>
+      <li>Widerspruch gegen die Verarbeitung (Art. 21)</li>
+      <li>Datenübertragbarkeit (Art. 20)</li>
+      <li>Beschwerde bei der Aufsichtsbehörde</li>
+    </ul>
+    <p style="margin-top:12px">Zuständige Aufsichtsbehörde: Sächsischer Datenschutzbeauftragter, Devrientstraße 5, 01067 Dresden</p>
+    <hr>
+    <p style="font-size:.75rem;color:rgba(255,255,255,.25)">Stand: 2026</p>
+  </div>
+</div>
+
+<script>
+  // Cookie
+  function cookieAccept(){ localStorage.setItem('cc','all'); document.getElementById('cookie-banner').classList.add('hidden'); }
+  function cookieDecline(){ localStorage.setItem('cc','min'); document.getElementById('cookie-banner').classList.add('hidden'); }
+  if(localStorage.getItem('cc')) document.getElementById('cookie-banner').classList.add('hidden');
+
+  // Footer-Jahr dynamisch
+  var yrEl=document.getElementById('yr'); if(yrEl) yrEl.textContent=new Date().getFullYear();
+
+  var reduceMo=window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Headline Word-Reveal — Wörter der Sektionstitel steigen gestaffelt ein
+  if(!reduceMo){
+    try{
+      document.querySelectorAll('.sh').forEach(function(h){
+        var frag=document.createDocumentFragment(), i=0;
+        [].slice.call(h.childNodes).forEach(function(node){
+          if(node.nodeType===3){
+            node.textContent.split(/(\s+)/).forEach(function(part){
+              if(part.trim()===''){ frag.appendChild(document.createTextNode(part)); }
+              else { var w=document.createElement('span'); w.className='wr'; w.style.transitionDelay=(i*0.06)+'s'; w.textContent=part; frag.appendChild(w); i++; }
+            });
+          } else { frag.appendChild(node.cloneNode(true)); }
+        });
+        h.innerHTML=''; h.appendChild(frag);
+      });
+      var whObs=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('wr-go'); whObs.unobserve(e.target);} }); },{threshold:.3});
+      document.querySelectorAll('.sh').forEach(function(h){ whObs.observe(h); });
+    }catch(err){}
+  }
+
+  // Scroll-Effekte: Nav-State + Hero-Zoom + Showreel-Parallax + Sticky-Bild-Zoom
+  var navEl=document.getElementById('nav'),
+      heroSec=document.querySelector('.hero'), heroVid=document.querySelector('.hero-bg'), heroCt=document.querySelector('.hero-content'),
+      srVid=document.querySelector('.sr-video'),
+      zsTrack=document.getElementById('zsTrack'), zsImg=document.getElementById('zsImg'),
+      ticking=false;
+  function onScrollFx(){
+    ticking=false;
+    var de=document.documentElement, vh=de.clientHeight, sy=window.pageYOffset||de.scrollTop;
+    if(navEl) navEl.classList.toggle('scrolled', sy>60);
+    if(reduceMo) return;
+    if(heroSec&&heroVid&&heroCt){           // Hero zoomt + blendet beim Scrollen ab
+      var hp=Math.min(Math.max(sy/(heroSec.offsetHeight||vh),0),1);
+      heroVid.style.transform='scale('+(1+hp*0.18)+')';
+      heroCt.style.transform='translateY('+(hp*-44)+'px)';
+      heroCt.style.opacity=String(1-hp*1.15);
+    }
+    if(srVid){                              // Showreel-Parallax
+      var r=srVid.parentElement.getBoundingClientRect();
+      var prg=(r.top+r.height/2 - vh/2)/vh;
+      srVid.style.transform='translateY('+(prg*6)+'%) scale(1.12)';
+    }
+    if(zsTrack&&zsImg){                     // Sticky-Bild-Zoom
+      var rt=zsTrack.getBoundingClientRect(), total=(zsTrack.offsetHeight-vh)||1;
+      var zp=Math.min(Math.max(-rt.top/total,0),1);
+      zsImg.style.transform='scale('+(0.72+zp*0.40)+')';
+      zsImg.style.borderRadius=(48-zp*40)+'px';
+    }
+  }
+  window.addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(onScrollFx); } },{passive:true});
+  window.addEventListener('resize',onScrollFx,{passive:true});
+  onScrollFx();
+
+  // Mobile menu
+  function toggleMenu(){ document.getElementById('mob').classList.toggle('open'); }
+  function closeMob(){ document.getElementById('mob').classList.remove('open'); }
+
+  // Sliders
+  function openSlider(id){
+    document.getElementById(id+'-overlay').classList.add('open');
+    document.getElementById(id+'-panel').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeSlider(id){
+    document.getElementById(id+'-overlay').classList.remove('open');
+    document.getElementById(id+'-panel').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeSlider('imp'); closeSlider('dsgvo'); } });
+
+  // Fade-up
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.12});
+  document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+  // Formspree
+  const cf=document.getElementById('cform');
+  cf.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const btn=cf.querySelector('.fsub');
+    btn.textContent='Wird gesendet…';btn.disabled=true;
+    try{
+      const r=await fetch(cf.action,{method:'POST',body:new FormData(cf),headers:{'Accept':'application/json'}});
+      if(r.ok){btn.textContent='✓ Erfolgreich gesendet!';btn.style.background='#16a34a';}
+      else{btn.textContent='Fehler — bitte nochmal';btn.disabled=false;}
+    }catch{btn.textContent='Fehler — bitte nochmal';btn.disabled=false;}
+  });
+</script>
+</body>
+</html>
