@@ -179,6 +179,7 @@
       .ph-title { font-size:2.2rem; }
     }
   </style>
+  <link rel="stylesheet" href="assets/hell.css">
 </head>
 <body>
 
@@ -503,6 +504,34 @@
   // Fade-up
   const obs = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); }); }, {threshold:.08});
   document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+</script>
+
+<!-- ─── REFERENZ-LIGHTBOX ─── -->
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <button class="lb-close" aria-label="Schließen">×</button>
+  <div class="lb-card">
+    <div class="lb-img"><img src="" alt=""></div>
+    <div class="lb-body"><span class="lb-cat"></span><h3 class="lb-title"></h3><p class="lb-story"></p></div>
+  </div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'); if(!lb) return;
+  var img=lb.querySelector('.lb-img img'),cat=lb.querySelector('.lb-cat'),tit=lb.querySelector('.lb-title'),sto=lb.querySelector('.lb-story');
+  function open(it){
+    var im=it.querySelector('img'), lab=it.querySelector('.ref-label'), c=it.querySelector('.ref-cat');
+    img.src=im.src; img.alt=im.alt||''; tit.textContent=lab?lab.textContent:''; cat.textContent=c?c.textContent:'';
+    sto.textContent='Ein realisiertes Projekt von Malerfachbetrieb Sören Scholz. Detailfotos und Referenzen gern auf Anfrage.';
+    lb.classList.add('open'); document.body.style.overflow='hidden';
+  }
+  function close(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+  document.querySelectorAll('.ref-item').forEach(function(it){
+    var p=document.createElement('span'); p.className='ref-plus'; p.textContent='+'; it.appendChild(p);
+    it.addEventListener('click',function(){open(it);});
+  });
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target.closest('.lb-close')) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+})();
 </script>
 </body>
 </html>
